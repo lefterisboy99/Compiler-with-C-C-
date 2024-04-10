@@ -1,0 +1,270 @@
+/*function constmaker(c){
+    return [ {"c" : c },
+            { "()" : (function(t){return t.c;}) } ];
+}
+
+c10 = constmaker(10);
+
+print(c10());
+*/
+/*
+func = [
+	{"()" : (function (t, msg){
+		print("Call ", t.class, "'s print\n");
+		print(msg);
+	})},
+	{"class": "Functor"}
+];
+
+func("LALA\n");
+
+
+*/
+
+
+
+
+/*
+func = [
+	{"()" : (function (t, msg){
+		print("Call ", t.class, "'s print\n");
+		print(msg);
+	})},
+	{"class": "Functor"}
+];
+
+func("LALA\n");
+*/
+
+
+
+
+
+
+
+
+
+
+/*
+proper output: 
+
+Book Title: Hitchhicker's Guide to the Galaxy
+        Section :Section #1
+                paragraph 1... blah
+                paragraph 2... blah
+        Section :Section #2
+        Section :Section #3
+
+*/
+/*
+function Book(title) {
+    return [
+		{ "title" : title },
+		{ "sections" : [] },
+
+		{ "AppendSection" :
+			(function(book, section) {
+				book.sections[objecttotalmembers(book.sections)] = section;
+			})
+		},
+
+        { "Accept" :
+        	(function(book, visitor) {
+        		visitor.VisitBook(book);
+
+        		for (i=0; i < objecttotalmembers(book.sections); ++i)
+        			book.sections[i].Accept(book.sections[i], visitor);
+        	})
+        }
+    ];
+}
+
+function Section(title) {
+    return [
+        { "title" : title },
+        { "paragraphs" : [] },
+
+		{ "AppendParagraph" :
+			(function(section, paragraph) {
+				section.paragraphs[0]
+					= paragraph;
+			})
+		},
+
+        { "Accept" :
+        	(function(section, visitor) {
+        		visitor.VisitSection(section);
+
+        		for (i=0; i < objecttotalmembers(section.paragraphs); ++i)
+        			section.paragraphs[i].Accept(section.paragraphs[i], visitor);
+        	})
+        }
+    ];
+}
+
+function Paragraph(text) {
+    return [
+        { "content" : text },
+
+        { "Accept" :
+        	(function(paragraph, visitor) {
+        		visitor.VisitParagraph(paragraph);
+        	})
+        }
+    ];
+}
+
+book = Book("Hitchhicker's Guide to the Galaxy");
+book..AppendSection(Section("Section #1"));
+
+book.sections[0]..AppendParagraph(Paragraph("paragraph 1... blah"));
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //Test for '.." call
+function f( f , a){
+        print(a);
+}
+
+function tr(){
+        return[ {"func" : f} ];
+}
+
+function retval(b){
+        return b;
+}
+
+
+x = [];
+
+x.table = tr();
+x.table..func(retval(5));
+*/
+
+
+
+
+/*
+function f(){ return 1+2; }
+
+function f_caller(a){
+    
+}
+
+f_caller( f() );
+
+*/
+
+
+
+/*
+vec0 = [];
+vec3 = [0,1,0];
+vec5 = [1, -2, 1, 0, 1];
+vectors = [vec0, vec5];
+
+
+
+directory = [
+        {"x" : vectors[0] },
+        {"y" : vectors[1] },
+        {"z" : 42},
+        {3 : 2},
+        {"f" : (function (x) { return 2*x; } )},
+        {345345: 345345},
+        {0 : "y" },
+        {"o" : "empty_table"},
+        {"vec3" : "vec3"}
+];
+
+function Assert(condition, line)
+{
+	print("Assert condition is: ", condition, "\n");
+        if (not condition)
+                print("ASSERTION FAILED! at line: ", line, "\n");
+}
+
+
+//Assert(directory[3] == 2, 28); 
+Assert(directory[ "vec3" ] == "vec3", 29); 
+*/
+
+
+
+
+
+
+
+/*x = "opa";
+x = "manon";
+
+x = 1;
+y = 2;
+
+x = cos(3.1415);
+
+function f(){}
+*/
+
+/*
+function f(){};
+
+x = (function g(){});
+
+{
+
+function g(){}
+
+
+}
+
+{
+
+function g(){}
+
+
+}
+
+x = g();
+*/
+
+
+
+/*
+x = "1";
+y = "a123456789";
+z = "123";
+a = "1234567";
+
+x = 1;
+y = 2;
+
+
+function f(x,y) { return x+y; }
+*/
+
+
+//x = 10;
+//y = "hello";
+//function f(x,y) {return x+y;}
+//f(1,2);
+//z = "world";
+//w = cos(3.1415);
+//f(1,2);
+//print(x,y,z,w);

@@ -1,0 +1,32 @@
+---------1)na do an: h avm_tableSetElem() prepei na kanei garbage collection prin thetei kapoia timi
+
+---------2)h avm_tableSetElem() exei ftiaxtei mono gia na thetei number, strings, bool ,nil
+
+---------2a)Na do dikh moy sel 33 (sthnavm_setTableElem an value nill na ginei remove )
+
+---------2b)Na do dikh moy selida 34 gia avm_setTableElem()...(tha kaloyme tin avm assign)
+
+3)h table_tostring() ti epistrefei???
+
+---------4)otan ftiaxtoyn oles oi library function na mpoyn mesa ston pinaka "lib_funcs_log"
+
+---------5)lecture 15 pages 13-14 otan telisoyn oi execute na ftiaxtei o dispacher
+
+6)loipoun apo to function call ta functors call...
+
+
+
+
+
+
+
+#############################     Na elenksoyme me ta alania     #########################################
+1) toys Relational operators(>= , > , <= , <)  selida 26 dialeksi 15
+
+2)Equality operators ( == , != )
+
+
+
+
+#############################     Na elenksoyme me ta alania/TESTING     #########################################
+Na kalesoyme thn argument() library function me ena orisma parapano apo oti exei o caller an p.x. o caller exei 2 actuals na kalesoyme argument(2); kai argument(3);

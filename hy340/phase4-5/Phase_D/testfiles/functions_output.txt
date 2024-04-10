@@ -1,0 +1,220 @@
+~~~~~~~~~~~0
+---------------curr-------------------0
+~~~~OUTSIDE BLOCK~~~~1
+~~~~~~~~~~~1
+~~~~~~~~~~~0
+---------------curr-------------------2
+---------------curr-------------------3
+~~~~OUTSIDE BLOCK~~~~4
+~~~~~~~~~~~4
+~~~~~~~~~~~0
+~~~~~~~~~~~0
+---------------curr-------------------0
+~~~~OUTSIDE BLOCK~~~~1
+~~~~~~~~~~~1
+~~~~OUTSIDE BLOCK~~~~0
+~~~~~~~~~~~0
+---------------curr-------------------1
+---------------curr-------------------2
+[34m
+###########################################     Symbol table:     ###########################################
+
+[0m----------------------------------	Scope:#0	----------------------------------
+"print"                         [Library Function] 	(line 0)	 (scope 0)
+"input"                         [Library Function] 	(line 0)	 (scope 0)
+"objectmemberkeys"              [Library Function] 	(line 0)	 (scope 0)
+"objecttotalmembers"            [Library Function] 	(line 0)	 (scope 0)
+"objectcopy"                    [Library Function] 	(line 0)	 (scope 0)
+"totalarguments"                [Library Function] 	(line 0)	 (scope 0)
+"argument"                      [Library Function] 	(line 0)	 (scope 0)
+"typeof"                        [Library Function] 	(line 0)	 (scope 0)
+"strtonum"                      [Library Function] 	(line 0)	 (scope 0)
+"sqrt"                          [Library Function] 	(line 0)	 (scope 0)
+"cos"                           [Library Function] 	(line 0)	 (scope 0)
+"sin"                           [Library Function] 	(line 0)	 (scope 0)
+"sum"                           [User Function   ] 	(line 3)	 (scope 0)
+"$1"                            [User Function   ] 	(line 7)	 (scope 0)
+"f"                             [User Function   ] 	(line 12)	 (scope 0)
+"x"                             [Global Variable ] 	(line 18)	 (scope 0)
+"^0"                            [Global Variable ] 	(line 18)	 (scope 0)
+"^1"                            [Global Variable ] 	(line 18)	 (scope 0)
+
+----------------------------------	Scope:#1	----------------------------------
+"a1"                            [Formal Argument ] 	(line 3)	 (scope 1)
+"a2"                            [Formal Argument ] 	(line 3)	 (scope 1)
+"^0"                            [Local Variable  ] 	(line 4)	 (scope 1)
+"a"                             [Local Variable  ] 	(line 8)	 (scope 1)
+"b"                             [Local Variable  ] 	(line 8)	 (scope 1)
+"^0"                            [Local Variable  ] 	(line 8)	 (scope 1)
+"^1"                            [Local Variable  ] 	(line 8)	 (scope 1)
+"$2"                            [User Function   ] 	(line 13)	 (scope 1)
+
+----------------------------------	Scope:#2	----------------------------------
+"^0"                            [Local Variable  ] 	(line 14)	 (scope 2)
+
+[34m
+########################################     Intermediate code:     ########################################n
+[0mquad#      opcode              result                arg1             arg2        label      line
+-------------------------------------------------------------------------------------------------------------
+0                JUMP                                                                     5         3
+1           FUNCSTART                                     sum                                       3
+2                 ADD                  ^0                  a1                  a2                   4
+3                 RET                                      ^0                                       4
+ipolipete ena jump sto funcend
+4             FUNCEND                                     sum                                       5
+5                JUMP                                                                    16         7
+6           FUNCSTART                                      $1                                       7
+7              ASSIGN                   b            5.000000                                       8
+8              ASSIGN                  ^0                   b                                       8
+9              ASSIGN                   a                  ^0                                       8
+10              ASSIGN                  ^1                  a                                       8
+11               PARAM                                      b                              s        9
+12               PARAM                                      a                                       9
+13                CALL                 sum                                                          9
+14           GETRETVAL                  ^0                                                          9
+15             FUNCEND                                      $1                                      10
+16                JUMP                                                                    24        12
+17           FUNCSTART                                       f                                      12
+18                JUMP                                                                    23        13
+19           FUNCSTART                                      $2                                      13
+20                 ADD                  ^0            5.000000           10.000000                  14
+21                 RET                                      ^0                                      14
+22             FUNCEND                                      $2                                      15
+23             FUNCEND                                       f                                      16
+24                CALL                   f                                                          18
+25           GETRETVAL                  ^0                                                          18
+26              ASSIGN                   x                  ^0                                      18
+27              ASSIGN                  ^1                   x                                      18
+-------------------------------------------------------------------------------------------------------------
+
+bazo instructions_table.size()0quad.label 5
+add_incomplete_jump():  intrNo 0  quad.label: 5
+bazo instructions_table.size()6quad.label 16
+add_incomplete_jump():  intrNo 6  quad.label: 16
+eeeeeeeeeeeee:   2
+bazo instructions_table.size()17quad.label 24
+add_incomplete_jump():  intrNo 17  quad.label: 24
+bazo instructions_table.size()19quad.label 23
+add_incomplete_jump():  intrNo 19  quad.label: 23
+eeeeeeeeeeeee:   2
+################################################################
+incomplete_jump[i].instrNo:0
+incomplete_jump[i].iaddress (poio quad na paro) :5
+quads[ incomplete_jump[i].iaddress ].taddress (poy na kano jump)6
+################################################################
+################################################################
+incomplete_jump[i].instrNo:6
+incomplete_jump[i].iaddress (poio quad na paro) :16
+quads[ incomplete_jump[i].iaddress ].taddress (poy na kano jump)17
+################################################################
+################################################################
+incomplete_jump[i].instrNo:17
+incomplete_jump[i].iaddress (poio quad na paro) :24
+quads[ incomplete_jump[i].iaddress ].taddress (poy na kano jump)26
+################################################################
+################################################################
+incomplete_jump[i].instrNo:19
+incomplete_jump[i].iaddress (poio quad na paro) :23
+quads[ incomplete_jump[i].iaddress ].taddress (poy na kano jump)25
+################################################################
+[34m
+########################################     Target code:     ########################################n
+[0minst#      opcode          result                arg1                     arg2                line
+-------------------------------------------------------------------------------------------------------------
+0              JUMP     0(label),6 :                                                                  3
+1        FUNC_ENTER     8(userfunc),0 :sum                                                            3
+2               ADD     3(local),0 :^0       2(formal) ,0 :a1          2(formal) ,1 :a2                4
+3            ASSIGN     10(retval),          3(local) ,0 :^0                                            4
+4              JUMP     0(label),5 :                                                                  0
+5         FUNC_EXIT     8(userfunc),0 :sum                                                            5
+6              JUMP     0(label),17 :                                                                 7
+7        FUNC_ENTER     8(userfunc),1 :$1                                                             7
+8            ASSIGN     3(local),1 :b        4(number) ,0 :5.000000                                            8
+9            ASSIGN     3(local),2 :^0       3(local) ,1 :b                                            8
+10            ASSIGN     3(local),0 :a        3(local) ,2 :^0                                            8
+11            ASSIGN     3(local),3 :^1       3(local) ,0 :a                                            8
+12          PUSH_ARG                          3(local) ,1 :b                                            9
+13          PUSH_ARG                          3(local) ,0 :a                                            9
+14              CALL                          8(userfunc) ,0 :sum                                            9
+15            ASSIGN     3(local),2 :^0       10(retval) ,0 :                                            9
+16         FUNC_EXIT     8(userfunc),2 :$1                                                             10
+17              JUMP     0(label),26 :                                                                 12
+18        FUNC_ENTER     8(userfunc),2 :f                                                              12
+19              JUMP     0(label),25 :                                                                 13
+20        FUNC_ENTER     8(userfunc),3 :$2                                                             13
+21               ADD     3(local),0 :^0       4(number) ,0 :5.000000   4(number) ,1 :10.000000                14
+22            ASSIGN     10(retval),          3(local) ,0 :^0                                            14
+23              JUMP     0(label),24 :                                                                 0
+24         FUNC_EXIT     8(userfunc),3 :$2                                                             15
+25         FUNC_EXIT     8(userfunc),3 :f                                                              16
+26              CALL                          8(userfunc) ,2 :f                                            18
+27            ASSIGN     1(global),1 :^0      10(retval) ,2 :                                            18
+28            ASSIGN     1(global),0 :x       1(global) ,1 :^0                                            18
+29            ASSIGN     1(global),2 :^1      1(global) ,0 :x                                            18
+-------------------------------------------------------------------------------------------------------------
+numConst table     # elems: 2
+strConsts table    # elems: 0
+libFunctions table # elems: 0
+userFuncs table    # elems: 4
+
+numConst Table: 
+---------------------------------------------
+[0]5
+[1]10
+---------------------------------------------
+
+userFuncs Table: [address , localSize , name id]
+---------------------------------------------
+[0] [1,1,sum]
+[1] [7,4,$1]
+[2] [18,0,f]
+[3] [20,1,$2]
+---------------------------------------------
+
+The Magic Number of file is: 340200501. The file is ".abc" .
+
+Total strings #0
+
+Total number #2
+[0] :5
+[1] :10
+
+Total number of user function #4
+[0] address :1, localsize: 1, str_len:4 id/name: [sum]
+[1] address :7, localsize: 4, str_len:3 id/name: [$1]
+[2] address :18, localsize: 0, str_len:2 id/name: [f]
+[3] address :20, localsize: 1, str_len:3 id/name: [$2]
+
+Total number of lib function #0
+
+Total number of Target instruction #30
+23  0 6  ,11 22036  ,11 22036  ,3
+18  8 0  ,11 32580  ,11 32580  ,3
+0  3 0  ,2 0  ,2 1  ,4
+5  10 0  ,3 0  ,11 32580  ,4
+23  0 5  ,11 0  ,11 32580  ,0
+19  8 0  ,11 0  ,11 32580  ,5
+23  0 17  ,11 32765  ,11 32765  ,7
+18  8 1  ,11 0  ,11 32580  ,7
+5  3 1  ,4 0  ,11 32765  ,8
+5  3 2  ,3 1  ,11 32765  ,8
+5  3 0  ,3 2  ,11 32765  ,8
+5  3 3  ,3 0  ,11 32765  ,8
+17  11 1  ,3 1  ,11 32580  ,9
+17  11 1  ,3 0  ,11 32580  ,9
+16  11 1  ,8 0  ,11 32580  ,9
+5  3 2  ,10 0  ,11 32580  ,9
+19  8 2  ,11 0  ,11 32580  ,10
+23  0 26  ,11 32765  ,11 32765  ,12
+18  8 2  ,11 0  ,11 32580  ,12
+23  0 25  ,11 32765  ,11 32765  ,13
+18  8 3  ,11 0  ,11 32580  ,13
+0  3 0  ,4 0  ,4 1  ,14
+5  10 3  ,3 0  ,11 32580  ,14
+23  0 24  ,11 0  ,11 32580  ,0
+19  8 3  ,11 0  ,11 32580  ,15
+19  8 3  ,11 0  ,11 32580  ,16
+16  11 3  ,8 2  ,11 32580  ,18
+5  1 1  ,10 2  ,11 32580  ,18
+5  1 0  ,1 1  ,11 32765  ,18
+5  1 2  ,1 0  ,11 32765  ,18

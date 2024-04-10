@@ -1,0 +1,26 @@
+/*
+function factorial(a) {
+    if(a >= 1) {
+        return a*factorial(a-1);
+    }
+    return 1;
+}
+a = factorial(3);
+print(a, "\n");
+*/
+
+function g(x){
+    print(x,"\n");
+    
+    return 2;
+}
+
+function f(x){
+    print(x,"\n");
+    print(g(x),"\n");
+    return f;
+}
+
+
+a=f(1)(2)(3);
+a(1)(2);

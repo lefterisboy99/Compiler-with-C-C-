@@ -1,0 +1,75 @@
+########################################     Target code:     ########################################n
+inst#      opcode          result                arg1                     arg2                line
+-------------------------------------------------------------------------------------------------------------
+
+0            ASSIGN     1(global),0 :a       4(number) ,0 :10.000000                                    3
+1            ASSIGN     1(global),1 :^0      1(global) ,0 :a                                            3
+2            ASSIGN     1(global),2 :b       1(global) ,0 :a                                            4
+3            ASSIGN     1(global),1 :^0      1(global) ,2 :b                                            4
+4            ASSIGN     1(global),5 :z       4(number) ,1 :5.000000                                     6
+5            ASSIGN     1(global),1 :^0      1(global) ,5 :z                                            6
+6            ASSIGN     1(global),4 :y       1(global) ,1 :^0                                           6
+7            ASSIGN     1(global),6 :^1      1(global) ,4 :y                                            6
+8            ASSIGN     1(global),3 :x       1(global) ,6 :^1                                           6
+9            ASSIGN     1(global),7 :^2      1(global) ,3 :x                                            6
+10              ADD     1(global),1 :^0      4(number) ,1 :5.000000    4(number) ,0 :10.000000          8
+11           ASSIGN     1(global),8 :w_add_c 1(global) ,1 :^0                                           8
+12           ASSIGN     1(global),6 :^1      1(global) ,8 :w_add_c                                      8
+13              ADD     1(global),1 :^0      1(global) ,3 :x           4(number) ,0 :10.000000          9
+14           ASSIGN     1(global),9 :w_add   1(global) ,1 :^0                                           9
+15           ASSIGN     1(global),6 :^1      1(global) ,9 :w_add                                        9
+16              SUB     1(global),1 :^0      4(number) ,2 :1000.000000 4(number) ,3 :47.000000          11
+17           ASSIGN     1(global),10 :w_sub  1(global) ,1 :^0                                           11
+18           ASSIGN     1(global),6 :^1      1(global) ,10 :w_sub                                       11
+19              SUB     1(global),1 :^0      1(global) ,2 :b           4(number) ,0 :10.000000          12
+20              SUB     1(global),6 :^1      1(global) ,1 :^0          4(number) ,4 :447.000000         12
+21           ASSIGN     1(global),10 :w_sub  1(global) ,6 :^1                                           12
+22           ASSIGN     1(global),7 :^2      1(global) ,10 :w_sub                                       12
+23              MUL     1(global),1 :^0      4(number) ,0 :10.000000   4(number) ,1 :5.000000           14
+24              MUL     1(global),6 :^1      1(global) ,1 :^0          4(number) ,5 :4.000000           14
+25           ASSIGN     1(global),11 :w_mul  1(global) ,6 :^1                                           14
+26           ASSIGN     1(global),7 :^2      1(global) ,11 :w_mul                                       14
+27              MUL     1(global),1 :^0      4(number) ,0 :10.000000   1(global) ,0 :a                  15
+28           ASSIGN     1(global),11 :w_mul  1(global) ,1 :^0                                           15
+29           ASSIGN     1(global),6 :^1      1(global) ,11 :w_mul                                       15
+30              MOD     1(global),1 :^0      4(number) ,6 :101.000000  4(number) ,0 :10.000000          17
+31           ASSIGN     1(global),12 :w_mod  1(global) ,1 :^0                                           17
+32           ASSIGN     1(global),6 :^1      1(global) ,12 :w_mod                                       17
+33              MOD     1(global),1 :^0      4(number) ,0 :10.000000   1(global) ,0 :a                  18
+34           ASSIGN     1(global),12 :w_mod  1(global) ,1 :^0                                           18
+35           ASSIGN     1(global),6 :^1      1(global) ,12 :w_mod                                       18
+-------------------------------------------------------------------------------------------------------------
+numConst table     # elems: 7
+strConsts table    # elems: 0
+libFunctions table # elems: 0
+userFuncs table    # elems: 0
+
+numConst Table: 
+---------------------------------------------
+[0]10
+[1]5
+[2]1000
+[3]47
+[4]447
+[5]4
+[6]101
+---------------------------------------------
+
+The Magic Number of file is: 340200501. The file is ".abc" .
+
+Total strings #0
+
+Total number #7
+[0] :10
+[1] :5
+[2] :1000
+[3] :47
+[4] :447
+[5] :4
+[6] :101
+
+Total number of user function #0
+
+Total number of lib function #0
+
+

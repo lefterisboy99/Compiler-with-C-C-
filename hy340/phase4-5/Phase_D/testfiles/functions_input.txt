@@ -1,0 +1,18 @@
+// functions
+
+function sum(a1,a2){
+    return a1+a2;
+}
+
+function (){
+    a=b=5;
+    sum(a,b);
+}
+
+function f(){
+    function(){
+        return 5+10;
+    }
+}
+
+x=f();

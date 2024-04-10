@@ -1,0 +1,9 @@
+/*if (he or b or (y = x)) {
+	
+}
+else{
+
+	}
+*/
+
+not (y = x);

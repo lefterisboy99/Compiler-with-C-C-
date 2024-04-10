@@ -1,0 +1,25 @@
+//branches
+
+a = true or false;
+b = a and false;
+
+if(a and b){
+
+}
+
+while(true and not true){
+
+}
+
+/*//branches
+
+a = true;
+b = true;
+
+if(a and b){
+    x = 5 + 4;
+    print(x);
+}else{
+    y = 8 +2;
+    print(y);
+}*/

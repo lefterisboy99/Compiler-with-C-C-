@@ -1,0 +1,6 @@
+//Grammar error: Function call is not lvalue
+//print()	= 2;
+print();
+function test() { }
+tes();
+

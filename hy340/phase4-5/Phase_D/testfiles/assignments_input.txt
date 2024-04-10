@@ -1,0 +1,18 @@
+//assignments
+
+a=10;
+b=a;
+
+x=y=z=5;
+
+w_add_c=5+10;
+w_add=x+10;
+
+w_sub_c=1000-47;
+w_sub=b-10-447;
+
+w_mul_c=10*5*4;
+w_mul=10*a;
+
+w_mod_c=101 % 10;
+w_mod=10 % a;

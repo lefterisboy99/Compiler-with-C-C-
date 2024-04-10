@@ -1,0 +1,6 @@
+function f(parameter) {
+    print(typeof(parameter));
+}
+
+t = [10,"string",[]];
+t[0]..f();

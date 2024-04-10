@@ -1,0 +1,14 @@
+a = g(x);
+function f(x) {
+  print(x);
+  g(x);
+  return 1;
+}
+
+function g(x) {
+  print(x);
+  f(x);
+  return 1;
+}
+
+f(1);
